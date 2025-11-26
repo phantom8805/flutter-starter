@@ -20,7 +20,7 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  onLogoutClick(BuildContext context) {
+  void onLogoutClick(BuildContext context) {
     AuthService.logout(context);
   }
 

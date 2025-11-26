@@ -172,11 +172,11 @@ extension BuildContextEntension<T> on BuildContext {
   ///
 
   void showLoader() {
-    this.storeNonListened.isLoading = true;
+    storeNonListened.isLoading = true;
   }
 
   void hideLoader() {
-    this.storeNonListened.isLoading = false;
+    storeNonListened.isLoading = false;
   }
 
   String t(String? key) {

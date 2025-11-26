@@ -12,11 +12,11 @@ class Http {
   String token = '';
   final client = http.Client();
 
-  load() async {
+  Future<void> load() async {
     token = (await SharedPreferencesFacade().get(SharedPreferenceKey.token)) ?? '';
   }
 
-  setToken(String val) async {
+  Future<void> setToken(String val) async {
     await SharedPreferencesFacade().set(SharedPreferenceKey.token, val);
     token = val;
   }

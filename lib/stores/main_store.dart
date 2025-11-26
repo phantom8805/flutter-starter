@@ -24,7 +24,6 @@ abstract class _MainStore with Store {
   final AuthStore authStore = AuthStore();
   final SettingsStore settingsStore = SettingsConverter.createDefaultSettingsStore();
 
-  AppData? _appData;
   @observable
   ObservableList<Message> messages = ObservableList.of([]);
 
@@ -49,7 +48,6 @@ abstract class _MainStore with Store {
 
   Future<BaseResponse<AppData>> loadAppData() async {
     final response = await authApi.appData();
-    _appData = response.data;
     _onAppDataChange(response.data);
     return response;
   }

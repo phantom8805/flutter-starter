@@ -12,9 +12,10 @@ mixin _$AuthStore on _AuthStore, Store {
   Computed<bool>? _$isLoginComputed;
 
   @override
-  bool get isLogin => (_$isLoginComputed ??=
-          Computed<bool>(() => super.isLogin, name: '_AuthStore.isLogin'))
-      .value;
+  bool get isLogin => (_$isLoginComputed ??= Computed<bool>(
+    () => super.isLogin,
+    name: '_AuthStore.isLogin',
+  )).value;
 
   late final _$userAtom = Atom(name: '_AuthStore.user', context: context);
 

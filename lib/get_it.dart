@@ -1,5 +1,4 @@
 import 'package:flutterstarter/stores/main_store.dart';
-import 'package:flutterstarter/utils/audio.dart';
 import 'package:flutterstarter/utils/http.dart';
 import 'package:get_it/get_it.dart';
 
@@ -15,7 +14,6 @@ GetIt getIt() {
     return http;
   });
 
-  getIt.registerSingleton<Audio>(Audio());
 
   getIt.registerSingletonAsync<MainStore>(
     () async => MainStore(),

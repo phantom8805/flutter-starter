@@ -9,11 +9,10 @@ part of 'pagination_response.dart';
 PaginationResponse<T> _$PaginationResponseFromJson<T>(
   Map<String, dynamic> json,
   T Function(Object? json) fromJsonT,
-) =>
-    PaginationResponse<T>(
-      meta: MetaDataResponse.fromJson(json['meta'] as Map<String, dynamic>),
-      data: (json['data'] as List<dynamic>).map(fromJsonT).toList(),
-    );
+) => PaginationResponse<T>(
+  meta: MetaDataResponse.fromJson(json['meta'] as Map<String, dynamic>),
+  data: (json['data'] as List<dynamic>).map(fromJsonT).toList(),
+);
 
 MetaDataResponse _$MetaDataResponseFromJson(Map<String, dynamic> json) =>
     MetaDataResponse(

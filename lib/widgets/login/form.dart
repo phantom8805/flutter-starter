@@ -44,7 +44,7 @@ class _AuthFormState extends State<AuthForm> {
     super.dispose();
   }
 
-  setIsAuthProgress(bool val) {
+  void setIsAuthProgress(bool val) {
     setState(() {
       isAuthProgress = val;
     });
@@ -54,7 +54,7 @@ class _AuthFormState extends State<AuthForm> {
     return login.length < 3 || password.length < 3;
   }
 
-  onAuthBtnClick(BuildContext context) async {
+  Future<void> onAuthBtnClick(BuildContext context) async {
     SystemChannels.textInput.invokeMethod('TextInput.hide');
     FocusManager.instance.primaryFocus?.unfocus();
 

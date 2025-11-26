@@ -7,14 +7,10 @@ import 'package:flutterstarter/extensions/build_context_extensions.dart';
 import 'package:flutterstarter/screens/no_internet_screen.dart';
 import 'package:flutterstarter/stores/main_store.dart';
 import 'package:flutterstarter/theme.dart';
-import 'package:flutterstarter/utils/audio.dart';
 import 'package:flutterstarter/widgets/shared/loader.dart';
 import 'package:get_it/get_it.dart';
-import 'package:intl/date_symbol_data_local.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
-import 'package:wakelock_plus/wakelock_plus.dart';
-
 import 'app_router.dart';
 import 'get_it.dart';
 
@@ -25,11 +21,8 @@ void main() async {
   );
 
   await Future.wait([
-    initializeDateFormatting(),
     getIt().allReady(),
   ]);
-
-  WakelockPlus.enable();
 
   runApp(MultiProvider(
     providers: [
@@ -92,8 +85,6 @@ class _AppState extends State<App> with WidgetsBindingObserver {
   void dispose() {
     final mainStore = context.storeNonListened;
     mainStore.dispose();
-    GetIt.I<Audio>().dispose();
-
     super.dispose();
   }
 

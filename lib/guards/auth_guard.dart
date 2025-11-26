@@ -12,7 +12,7 @@ class AuthGuard extends AutoRouteGuard {
     if (mainStore.authStore.isLogin) {
       resolver.next();
     } else {
-      resolver.redirect(const LoginRoute());
+      resolver.redirectUntil(const LoginRoute());
     }
   }
 }

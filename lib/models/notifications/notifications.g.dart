@@ -14,6 +14,4 @@ Notifications _$NotificationsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$NotificationsToJson(Notifications instance) =>
-    <String, dynamic>{
-      'data': instance.items,
-    };
+    <String, dynamic>{'data': instance.items};

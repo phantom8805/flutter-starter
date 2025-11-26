@@ -9,8 +9,10 @@ part of 'settings_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$SettingsStore on _SettingsStore, Store {
-  late final _$scaleSizeAtom =
-      Atom(name: '_SettingsStore.scaleSize', context: context);
+  late final _$scaleSizeAtom = Atom(
+    name: '_SettingsStore.scaleSize',
+    context: context,
+  );
 
   @override
   ScaleSize get scaleSize {
@@ -25,8 +27,10 @@ mixin _$SettingsStore on _SettingsStore, Store {
     });
   }
 
-  late final _$isDarkThemeAtom =
-      Atom(name: '_SettingsStore.isDarkTheme', context: context);
+  late final _$isDarkThemeAtom = Atom(
+    name: '_SettingsStore.isDarkTheme',
+    context: context,
+  );
 
   @override
   IsDarkModeOption get isDarkTheme {

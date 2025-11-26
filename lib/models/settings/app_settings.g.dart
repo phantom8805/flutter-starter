@@ -7,10 +7,9 @@ part of 'app_settings.dart';
 // **************************************************************************
 
 AppSettings _$AppSettingsFromJson(Map<String, dynamic> json) => AppSettings(
-      scaleSize: $enumDecode(_$ScaleSizeEnumMap, json['scale_size']),
-      isDarkTheme:
-          $enumDecode(_$IsDarkModeOptionEnumMap, json['is_dark_theme']),
-    );
+  scaleSize: $enumDecode(_$ScaleSizeEnumMap, json['scale_size']),
+  isDarkTheme: $enumDecode(_$IsDarkModeOptionEnumMap, json['is_dark_theme']),
+);
 
 Map<String, dynamic> _$AppSettingsToJson(AppSettings instance) =>
     <String, dynamic>{
