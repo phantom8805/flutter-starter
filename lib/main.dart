@@ -64,7 +64,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
       setState(() {
         scaleSizeMultiplier = val.size;
       });
-    });
+    }, fireImmediately: true);
 
     WidgetsBinding.instance.addObserver(this);
 

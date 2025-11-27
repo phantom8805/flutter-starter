@@ -11,10 +11,6 @@ class AuthService {
     return AuthStorageProvider();
   }
 
-  static Auth? getDefault() {
-    return null;
-  }
-
   static Future<Auth?> loadData() async {
     try {
       final res = await AuthService.provider().loadData();

@@ -13,7 +13,7 @@ class AuthStore extends _AuthStore with _$AuthStore {
   }
 
   factory AuthStore.makeDefault() {
-    return AuthStore.fromModel(AuthService.getDefault());
+    return AuthStore.fromModel(null);
   }
 }
 

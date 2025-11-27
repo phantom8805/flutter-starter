@@ -7,9 +7,9 @@ import 'package:flutterstarter/services/data_providers/auth_provider_contract.da
 import 'package:flutterstarter/utils/shared_preferences_facade.dart';
 
 class AuthStorageProvider implements AuthProviderContract {
-  SharedPreferencesFacade storage = SharedPreferencesFacade();
-
   static const appDataKeySuffix = 'app-data';
+
+  SharedPreferencesFacade storage = SharedPreferencesFacade();
   String storageKey = 'auth-storage';
 
   String get appDataKey => '$storageKey/$appDataKeySuffix';
