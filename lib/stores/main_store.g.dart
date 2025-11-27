@@ -122,6 +122,18 @@ mixin _$MainStore on _MainStore, Store {
   }
 
   @override
+  void showError(Object e) {
+    final _$actionInfo = _$_MainStoreActionController.startAction(
+      name: '_MainStore.showError',
+    );
+    try {
+      return super.showError(e);
+    } finally {
+      _$_MainStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 messages: ${messages},

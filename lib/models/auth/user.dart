@@ -5,7 +5,7 @@ part 'user.g.dart';
 @JsonSerializable(fieldRename: FieldRename.snake)
 class User {
   @JsonKey(defaultValue: null)
-  final int id;
+  final String id;
   final String name;
 
   User({required this.id, required this.name});

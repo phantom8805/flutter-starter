@@ -38,7 +38,7 @@ abstract class _MainStore with Store {
       isReady = true;
     } catch (e) {
       isReady = false;
-      addAppError('Error: $e');
+      showError(e);
     } finally {
       isLoading = false;
     }
@@ -60,5 +60,10 @@ abstract class _MainStore with Store {
   @action
   void addAppError(String label) {
     messages.add(Message(label: label, type: MessageType.app, reportLevel: MessageReportLevel.error));
+  }
+
+  @action
+  void showError(Object e) {
+    addAppError('Error: $e');
   }
 }

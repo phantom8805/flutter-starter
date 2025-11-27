@@ -24,7 +24,7 @@ abstract class _AuthStore with Store {
   User? user;
 
   @computed
-  bool get isLogin => true;
+  bool get isLogin => user != null;
 
   Future<Auth?> init() async {
     final data = await AuthService.loadData();

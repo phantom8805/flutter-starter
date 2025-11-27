@@ -34,6 +34,10 @@ class BaseResponse<T> {
     return BaseResponse<T>(null, error, [message]);
   }
 
+  static BaseResponse<T> successResponse<T>(T data) {
+    return BaseResponse<T>(data, null, []);
+  }
+
   static BaseResponse<T> emptyResponse<T>() {
     return BaseResponse<T>(null, null, []);
   }
