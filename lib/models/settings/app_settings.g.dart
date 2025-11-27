@@ -11,11 +11,10 @@ AppSettings _$AppSettingsFromJson(Map<String, dynamic> json) => AppSettings(
   isDarkTheme: $enumDecode(_$IsDarkModeOptionEnumMap, json['is_dark_theme']),
 );
 
-Map<String, dynamic> _$AppSettingsToJson(AppSettings instance) =>
-    <String, dynamic>{
-      'scale_size': _$ScaleSizeEnumMap[instance.scaleSize]!,
-      'is_dark_theme': _$IsDarkModeOptionEnumMap[instance.isDarkTheme]!,
-    };
+Map<String, dynamic> _$AppSettingsToJson(AppSettings instance) => <String, dynamic>{
+  'scale_size': _$ScaleSizeEnumMap[instance.scaleSize]!,
+  'is_dark_theme': _$IsDarkModeOptionEnumMap[instance.isDarkTheme]!,
+};
 
 const _$ScaleSizeEnumMap = {
   ScaleSize.small: 'small',
@@ -24,7 +23,4 @@ const _$ScaleSizeEnumMap = {
   ScaleSize.extraLarge: 'extra_large',
 };
 
-const _$IsDarkModeOptionEnumMap = {
-  IsDarkModeOption.no: 0,
-  IsDarkModeOption.yes: 1,
-};
+const _$IsDarkModeOptionEnumMap = {IsDarkModeOption.no: 0, IsDarkModeOption.yes: 1};

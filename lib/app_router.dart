@@ -14,9 +14,9 @@ class AppRouter extends RootStackRouter {
 
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: LoginRoute.page, keepHistory: false),
-        guardedAutoRoute(page: SettingsRoute.page),
-      ];
+    AutoRoute(page: LoginRoute.page, keepHistory: false),
+    guardedAutoRoute(page: SettingsRoute.page),
+  ];
 
   AutoRoute guardedAutoRoute({required PageInfo page}) {
     return AutoRoute(page: page, initial: initialRoute().routeName == page.name, guards: [AuthGuard(mainStore)]);

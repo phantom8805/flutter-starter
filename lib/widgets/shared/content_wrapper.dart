@@ -12,10 +12,9 @@ class ContentWrapper extends StatelessWidget {
       color: context.background,
       padding: EdgeInsets.symmetric(horizontal: context.horizontalPageOuterPadding),
       child: Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: context.horizontalPageInnerPadding,
-          ),
-          child: child),
+        padding: EdgeInsets.symmetric(horizontal: context.horizontalPageInnerPadding),
+        child: child,
+      ),
     );
   }
 }

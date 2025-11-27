@@ -22,27 +22,17 @@ class SettingLabel extends StatelessWidget {
               decoration: ShapeDecoration(
                 color: iconBackground,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.elliptical(context.borderRadius, context.borderRadius),
-                  ),
+                  borderRadius: BorderRadius.all(Radius.elliptical(context.borderRadius, context.borderRadius)),
                 ),
               ),
-              child: Icon(
-                icon,
-                size: context.largeIconSize,
-                color: context.onSuccess,
-              ),
+              child: Icon(icon, size: context.largeIconSize, color: context.onSuccess),
             ),
           ),
-          const SizedBox(
-            width: 10,
-          ),
+          const SizedBox(width: 10),
           Flexible(
             child: Text(
               context.t(text),
-              style: context.titleMedium?.merge(
-                TextStyle(color: context.onBackground, fontWeight: FontWeight.normal),
-              ),
+              style: context.titleMedium?.merge(TextStyle(color: context.onBackground, fontWeight: FontWeight.normal)),
             ),
           ),
         ],

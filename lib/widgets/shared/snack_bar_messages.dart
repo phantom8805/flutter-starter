@@ -21,10 +21,9 @@ class SnackBarMessages extends StatelessWidget {
         }
 
         for (final message in messages) {
-          context.scaffoldMessenger.showSnackBar(SnackBar(
-            showCloseIcon: true,
-            content: Text(context.t(message.label)),
-          ));
+          context.scaffoldMessenger.showSnackBar(
+            SnackBar(showCloseIcon: true, content: Text(context.t(message.label))),
+          );
           context.storeNonListened.removeMessage(message);
         }
       });

@@ -24,11 +24,6 @@ class SettingSectionItem extends StatelessWidget {
       ),
     );
 
-    return onTap != null
-        ? InkWell(
-            onTap: () => onTap!(),
-            child: rowWidget,
-          )
-        : rowWidget;
+    return onTap != null ? InkWell(onTap: () => onTap!(), child: rowWidget) : rowWidget;
   }
 }

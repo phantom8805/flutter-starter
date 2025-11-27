@@ -27,23 +27,16 @@ class ButtonStyled extends StatelessWidget {
       onPressed: isDisabled ? null : () => onBtnClick(context),
       style: ElevatedButton.styleFrom(
         backgroundColor: backgroundColor ?? context.primary,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(context.borderRadius),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(context.borderRadius)),
         minimumSize: size ?? Size(context.mediaQuery.size.width - 60, 60),
       ),
       child: isLoading == true
-          ? const SizedBox(
-              width: 15,
-              height: 15,
-              child: CircularProgressIndicator(),
-            )
+          ? const SizedBox(width: 15, height: 15, child: CircularProgressIndicator())
           : Text(
               context.t(text),
-              style: context.titleLarge?.merge(TextStyle(
-                fontWeight: FontWeight.bold,
-                color: textColor ?? context.onPrimary,
-              )),
+              style: context.titleLarge?.merge(
+                TextStyle(fontWeight: FontWeight.bold, color: textColor ?? context.onPrimary),
+              ),
             ),
     );
   }

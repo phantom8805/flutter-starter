@@ -19,16 +19,14 @@ class BaseResponse<T> {
 
     return value.entries
         .map(
-            (entry) => Message(label: entry.value.first, type: MessageType.http, reportLevel: MessageReportLevel.error))
+          (entry) => Message(label: entry.value.first, type: MessageType.http, reportLevel: MessageReportLevel.error),
+        )
         .toList();
   }
 
   BaseResponse(this.data, this.message, this.errors);
 
-  factory BaseResponse.fromJson(
-    Map<String, dynamic> json,
-    T Function(dynamic json) fromJsonT,
-  ) =>
+  factory BaseResponse.fromJson(Map<String, dynamic> json, T Function(dynamic json) fromJsonT) =>
       _$BaseResponseFromJson(json, fromJsonT);
 
   static BaseResponse<T> errorResponse<T>(String error) {

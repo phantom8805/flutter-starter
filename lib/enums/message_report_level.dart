@@ -1,5 +1,1 @@
-enum MessageReportLevel {
-  info,
-  warning,
-  error,
-}
+enum MessageReportLevel { info, warning, error }

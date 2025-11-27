@@ -11,25 +11,26 @@ import 'package:flutterstarter/widgets/shared/loader.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
+
 import 'app_router.dart';
 import 'get_it.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations(
-    [DeviceOrientation.portraitUp, DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight],
-  );
-
-  await Future.wait([
-    getIt().allReady(),
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
   ]);
 
-  runApp(MultiProvider(
-    providers: [
-      Provider<MainStore>(create: (_) => GetIt.I<MainStore>()),
-    ],
-    child: const App(),
-  ));
+  await Future.wait([getIt().allReady()]);
+
+  runApp(
+    MultiProvider(
+      providers: [Provider<MainStore>(create: (_) => GetIt.I<MainStore>())],
+      child: const App(),
+    ),
+  );
 }
 
 class App extends StatefulWidget {

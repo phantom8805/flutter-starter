@@ -11,15 +11,15 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldWrapper(
-      body: ListView(children: [
-        SizedBox(
-          width: context.mediaQuery.size.width,
-          height: context.mediaQuery.size.height - 50,
-          child: const Center(
-            child: AuthForm(),
+      body: ListView(
+        children: [
+          SizedBox(
+            width: context.mediaQuery.size.width,
+            height: context.mediaQuery.size.height - 50,
+            child: const Center(child: AuthForm()),
           ),
-        ),
-      ]),
+        ],
+      ),
     );
   }
 }

@@ -10,9 +10,7 @@ Message _$MessageFromJson(Map<String, dynamic> json) => Message(
   label: json['label'] as String,
   type: $enumDecode(_$MessageTypeEnumMap, json['type']),
   reportLevel: $enumDecode(_$MessageReportLevelEnumMap, json['report_level']),
-  actions: (json['actions'] as List<dynamic>?)
-      ?.map((e) => MessageAction.fromJson(e as Map<String, dynamic>))
-      .toList(),
+  actions: (json['actions'] as List<dynamic>?)?.map((e) => MessageAction.fromJson(e as Map<String, dynamic>)).toList(),
   relatedTo: json['related_to'] as String?,
   content: json['content'] as String?,
   key: json['key'] as String? ?? '',
@@ -45,5 +43,7 @@ const _$MessageReportLevelEnumMap = {
 MessageAction _$MessageActionFromJson(Map<String, dynamic> json) =>
     MessageAction(link: json['link'] as String, title: json['title'] as String);
 
-Map<String, dynamic> _$MessageActionToJson(MessageAction instance) =>
-    <String, dynamic>{'link': instance.link, 'title': instance.title};
+Map<String, dynamic> _$MessageActionToJson(MessageAction instance) => <String, dynamic>{
+  'link': instance.link,
+  'title': instance.title,
+};

@@ -10,14 +10,8 @@ class OnBackgroundPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
-        bottom: context.verticalSmallPadding / 2,
-        top: context.verticalSmallPadding / 2,
-      ),
-      padding: EdgeInsets.symmetric(
-        vertical: context.verticalPadding,
-        horizontal: context.horizontalPadding,
-      ),
+      margin: EdgeInsets.only(bottom: context.verticalSmallPadding / 2, top: context.verticalSmallPadding / 2),
+      padding: EdgeInsets.symmetric(vertical: context.verticalPadding, horizontal: context.horizontalPadding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(context.borderRadiusLarge),
         border: highlighted ? Border.all(color: context.primary) : null,

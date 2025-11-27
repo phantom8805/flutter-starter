@@ -5,10 +5,9 @@ part 'auth.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class Auth {
-  final String token;
   final User user;
 
-  Auth({required this.token, required this.user});
+  Auth({required this.user});
 
   factory Auth.fromJson(Map<String, dynamic> json) => _$AuthFromJson(json);
 

@@ -122,18 +122,6 @@ mixin _$MainStore on _MainStore, Store {
   }
 
   @override
-  void _onAppDataChange(AppData? appData) {
-    final _$actionInfo = _$_MainStoreActionController.startAction(
-      name: '_MainStore._onAppDataChange',
-    );
-    try {
-      return super._onAppDataChange(appData);
-    } finally {
-      _$_MainStoreActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
   String toString() {
     return '''
 messages: ${messages},

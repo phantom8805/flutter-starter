@@ -60,60 +60,51 @@ class _AuthFormState extends State<AuthForm> {
 
     setIsAuthProgress(true);
     await AuthService.login(context: context, login: login, password: password);
+
+    TextInput.finishAutofillContext();
     setIsAuthProgress(false);
   }
 
   List<Widget> formItems() => [
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 50),
-          child: Image(
-            image: AssetImage('assets/images/logo.png'),
-          ),
-        ),
-        AutofillGroup(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextFieldStyled(
-                label: 'Login',
-                placeholder: 'Your login',
-                message: 'at least 8 symbols',
-                iconData: Icons.person,
-                controller: loginController,
-                autofillHints: const [
-                  AutofillHints.newUsername,
-                  AutofillHints.username,
-                  AutofillHints.nickname,
-                  AutofillHints.email
-                ],
-                textInputAction: TextInputAction.next,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              TextFieldStyled(
-                label: 'Password',
-                placeholder: 'Your password',
-                message: 'at least 8 symbols',
-                iconData: Icons.password,
-                controller: passwordController,
-                obscureText: true,
-                autofillHints: const [AutofillHints.password],
-                textInputAction: TextInputAction.done,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              ButtonStyled(
-                isDisabled: isDisabled(),
-                isLoading: isAuthProgress,
-                onBtnClick: onAuthBtnClick,
-                text: 'Login',
-              ),
+    const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 50),
+      child: Image(image: AssetImage('assets/images/logo.png')),
+    ),
+    AutofillGroup(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextFieldStyled(
+            label: 'Login',
+            placeholder: 'Your login',
+            message: 'at least 8 symbols',
+            iconData: Icons.person,
+            controller: loginController,
+            autofillHints: const [
+              AutofillHints.newUsername,
+              AutofillHints.username,
+              AutofillHints.nickname,
+              AutofillHints.email,
             ],
+            textInputAction: TextInputAction.next,
           ),
-        ),
-      ];
+          const SizedBox(height: 20),
+          TextFieldStyled(
+            label: 'Password',
+            placeholder: 'Your password',
+            message: 'at least 8 symbols',
+            iconData: Icons.password,
+            controller: passwordController,
+            obscureText: true,
+            autofillHints: const [AutofillHints.password],
+            textInputAction: TextInputAction.done,
+          ),
+          const SizedBox(height: 30),
+          ButtonStyled(isDisabled: isDisabled(), isLoading: isAuthProgress, onBtnClick: onAuthBtnClick, text: 'Login'),
+        ],
+      ),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -124,9 +115,7 @@ class _AuthFormState extends State<AuthForm> {
           if (orientation == Orientation.portrait) {
             return Padding(
               padding: const EdgeInsets.all(30),
-              child: Column(
-                children: formItems(),
-              ),
+              child: Column(children: formItems()),
             );
           }
 

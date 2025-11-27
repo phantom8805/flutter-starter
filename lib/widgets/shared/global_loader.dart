@@ -8,13 +8,15 @@ class GlobalLoader extends StatelessWidget {
   const GlobalLoader({super.key, required this.child});
 
   @override
-  Widget build(BuildContext context) => Observer(builder: (_) {
-        return Stack(
-          children: [
-            child,
-            if (context.store.isLoading) ModalBarrier(color: Colors.black12.withValues(alpha: 0.3)),
-            if (context.store.isLoading) const Center(child: CircularProgressIndicator()),
-          ],
-        );
-      });
+  Widget build(BuildContext context) => Observer(
+    builder: (_) {
+      return Stack(
+        children: [
+          child,
+          if (context.store.isLoading) ModalBarrier(color: Colors.black12.withValues(alpha: 0.3)),
+          if (context.store.isLoading) const Center(child: CircularProgressIndicator()),
+        ],
+      );
+    },
+  );
 }

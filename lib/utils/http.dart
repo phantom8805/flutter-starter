@@ -1,13 +1,18 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutterstarter/utils/shared_preferences_facade.dart';
 import 'package:http/http.dart' as http;
 
 class Http {
-  static const host = kReleaseMode ? 'test.com' : 'test.com';
-  static const _scheme = 'https';
-  static const _prefix = '/app-api/';
+  String _host = '';
+  String _prefix = '';
+  String _scheme = '';
+
+  Http({String host = 'example.com', String apiPrefix = '/', String scheme = ''}) {
+    _host = host;
+    _prefix = apiPrefix;
+    _scheme = scheme;
+  }
 
   String token = '';
   final client = http.Client();
@@ -43,14 +48,17 @@ class Http {
   }
 
   Future<dynamic> postWithoutToken({required String path, Object? body, String? query}) async {
-    final response =
-        await client.post(_getUri(path, query), headers: <String, String>{'Accept': 'application/json'}, body: body);
+    final response = await client.post(
+      _getUri(path, query),
+      headers: <String, String>{'Accept': 'application/json'},
+      body: body,
+    );
 
     return jsonDecode(response.body);
   }
 
   Uri _getUri(String path, [String? query]) {
-    return Uri(host: host, path: _prefix + path, query: query, scheme: _scheme);
+    return Uri(host: _host, path: _prefix + path, query: query, scheme: _scheme);
   }
 
   Future<dynamic> _handleResponse(http.Response response) async {
@@ -62,28 +70,20 @@ class Http {
 
       if (response.statusCode >= 200 && response.statusCode < 300) {
         return json;
-      } else if (response.statusCode == 401) {
-        await SharedPreferencesFacade().cleanAll();
-        return {
-          'message': 'These credentials do not match our records',
-          'errors': {
-            'unknown': ['These credentials do not match our records']
-          }
-        };
       } else {
         return {
           'message': 'Server error',
           'errors': {
-            'unknown': ['Server error']
-          }
+            'unknown': ['Server error'],
+          },
         };
       }
     } catch (error) {
       return {
         'message': 'Server error',
         'errors': {
-          'unknown': ['Server error']
-        }
+          'unknown': ['Server error'],
+        },
       };
     }
   }

@@ -11,23 +11,20 @@ class NoInternetScreen extends StatelessWidget {
       theme: getThemeData(context),
       builder: (context, mainStore) {
         return Scaffold(
-            body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.wifi_off,
-                color: context.danger,
-                size: 150,
-              ),
-              Text(
-                context.t('No active internet connection'),
-                textAlign: TextAlign.center,
-                style: context.titleLarge,
-              )
-            ],
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.wifi_off, color: context.danger, size: 150),
+                Text(
+                  context.t('No active internet connection'),
+                  textAlign: TextAlign.center,
+                  style: context.titleLarge,
+                ),
+              ],
+            ),
           ),
-        ));
+        );
       },
     );
   }

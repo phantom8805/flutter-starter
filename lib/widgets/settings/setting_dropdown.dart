@@ -15,11 +15,7 @@ class SettingDropdown<T> extends StatelessWidget {
       enableFeedback: true,
       style: context.titleMedium,
       value: value,
-      icon: Icon(
-        Icons.keyboard_arrow_down,
-        size: context.largeIconSize,
-        color: context.onBackground,
-      ),
+      icon: Icon(Icons.keyboard_arrow_down, size: context.largeIconSize, color: context.onBackground),
       items: items,
       onChanged: (v) {
         if (v != null) {

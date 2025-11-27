@@ -24,10 +24,7 @@ class IconWithBgButton extends StatelessWidget {
     return Padding(
       padding: padding ?? EdgeInsets.zero,
       child: Ink(
-        decoration: ShapeDecoration(
-          color: bgColor ?? context.primary,
-          shape: const CircleBorder(),
-        ),
+        decoration: ShapeDecoration(color: bgColor ?? context.primary, shape: const CircleBorder()),
         child: IconButton(
           icon: icon,
           iconSize: iconSize ?? context.defaultIconSize,

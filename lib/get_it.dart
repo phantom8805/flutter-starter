@@ -8,17 +8,12 @@ GetIt getIt() {
   GetIt getIt = GetIt.instance;
 
   getIt.registerSingletonAsync<Http>(() async {
-    // final http = HttpMock();
     final http = Http();
     await http.load();
     return http;
   });
 
-
-  getIt.registerSingletonAsync<MainStore>(
-    () async => MainStore(),
-    dependsOn: [Http],
-  );
+  getIt.registerSingletonAsync<MainStore>(() async => MainStore(), dependsOn: [Http]);
 
   getIt.registerSingletonAsync<AppRouter>(() async {
     final appRouter = AppRouter(GetIt.I<MainStore>());

@@ -9,10 +9,7 @@ class AppSettings {
   ScaleSize scaleSize;
   IsDarkModeOption isDarkTheme;
 
-  AppSettings({
-    required this.scaleSize,
-    required this.isDarkTheme,
-  });
+  AppSettings({required this.scaleSize, required this.isDarkTheme});
 
   factory AppSettings.fromJson(Map<String, dynamic> json) => _$AppSettingsFromJson(json);
 

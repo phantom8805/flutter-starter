@@ -18,11 +18,9 @@ class SettingHeadline extends StatelessWidget {
               Flexible(
                 child: Text(
                   context.t(text).toUpperCase(),
-                  style: context.titleLarge?.merge(
-                    TextStyle(color: context.onDisabled, fontWeight: FontWeight.bold),
-                  ),
+                  style: context.titleLarge?.merge(TextStyle(color: context.onDisabled, fontWeight: FontWeight.bold)),
                 ),
-              )
+              ),
             ],
           ),
         ],

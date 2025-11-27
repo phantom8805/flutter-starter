@@ -6,25 +6,14 @@ class IconWithBg extends StatelessWidget {
   final Color? bgColor;
   final EdgeInsets? padding;
 
-  const IconWithBg({
-    required this.icon,
-    this.bgColor,
-    this.padding,
-    super.key,
-  });
+  const IconWithBg({required this.icon, this.bgColor, this.padding, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        decoration: ShapeDecoration(
-          color: bgColor ?? context.primary,
-          shape: const CircleBorder(),
-        ),
-        child: Padding(
-          padding: padding ?? EdgeInsets.zero,
-          child: icon,
-        ),
+        decoration: ShapeDecoration(color: bgColor ?? context.primary, shape: const CircleBorder()),
+        child: Padding(padding: padding ?? EdgeInsets.zero, child: icon),
       ),
     );
   }
